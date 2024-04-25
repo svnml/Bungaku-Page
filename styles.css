@@ -1,0 +1,341 @@
+/* La pagina fue creada a partir de la lectura de "No me hagas pensar", 
+aplique los conceptos de diseño y usabilidad que se mencionan en el libro.
+El trabajo contiene la mayoria de las convenciones de diseño web que se mencionan en el libro,
+por lo menos hasta el capitulo 7.
+ 
+No hay comentarios en el codigo (a excepcion de los que ordenan el codigo)
+porque solo utilice conceptos vistos en clases, W3 Schools o en el libro de Krug
+*/ 
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F1F0F0;
+}
+
+a:link, :visited, :hover {
+    text-decoration: none;
+    color: #3c0c0a;
+}
+
+.page-title {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    color: #3c0c0a;
+}
+
+
+/* FONTS */
+
+.nav-bar a ,
+.breadcrumb,
+.page-title,
+.logo-name,
+.home-info-container h2,
+footer,
+.info-card h3,
+.info-card p,
+.info-card a,
+.policy-container {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+h2 {
+    font-weight: 400;
+    font-style: normal;
+    color: #3c0c0a;
+}
+
+/* HEADER */
+
+.header-container {
+    box-shadow: 0 4px 8px 0 #A8A8A8;
+    background-color: #F1F0F0;
+    z-index: 1;
+    top: 0;
+    position: sticky;
+}
+
+header {
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.header-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-right svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 30px;
+    padding: 0;
+}
+.header-right {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.search-box input[type=text] {
+    box-shadow: 0 4px 8px 0 #A8A8A8;
+    border-style: double;
+    margin-right: 16px;
+    font-size: 17px;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo-name h5 {
+    font-size: 11px;
+    justify-content: center;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.logo-name {
+    flex-direction: column;
+    justify-items: center;
+    margin: 0;
+}
+
+
+.breadcrumb-container {
+    height: 40px;
+    background-color: #a30b38;
+    align-content: center;
+}
+.breadcrumb {
+    margin-left: 20px;
+    color: white;
+    font-display: none;
+}
+.breadcrumb a {
+    color: #ff7d8f;
+    text-decoration: underline;
+    padding: 0
+}
+
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+
+.arrow-down {
+    height: 14px;
+    width: 14px;
+}
+
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+.nav-bar a {
+    font-size: 16px;
+    padding-right: 20px;
+    margin-right: 50px;
+}
+.nav-bar a:hover {
+    color: #ff7d8f;
+}
+.nav-bar li:hover .submenu-autores {
+    display: block;  
+}
+
+
+.submenu-autores {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 120px;
+}
+.submenu-autores {
+    font-family: "Satoshi", sans-serif;
+    font-style: normal;
+    font-size: 16px;
+}
+.submenu-autores li {
+    display: block;
+    margin-top: 10px;
+}
+
+
+/* HOME */
+
+.first-book-container,
+.popular-book-container,
+.oferta-book-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.popular-book-container {
+    margin-bottom: 100px;
+}
+
+
+.first-section,
+.second-section,
+.third-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+.second-section {
+    margin-top: 100px;
+    background-color: grey;
+}
+.second-section h2 {
+    color: #fff0e6
+}
+
+
+.first-book,
+.popular-book,
+.oferta-book {
+    width: 209px;
+    height: 310px;
+    margin-top: 50px;
+    border-radius: 5px;
+    background: var(--i);
+    background-size: cover;
+    box-shadow: 5px 5px 8px black;
+}
+
+
+.info-card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    color: white;
+    opacity: 0;
+    transition: .5s;
+}
+.info-card a {
+    color: white;
+    text-decoration: underline;
+}
+.info-card a:hover {
+    color: #ff7d8f;
+}
+.info-card h3:hover,
+.info-card p:hover{
+    color: white;
+}
+
+
+.first-book:hover .info-card,
+.popular-book:hover .info-card,
+.oferta-book:hover .info-card {
+    opacity: 0.9;
+    border-radius: 5px;
+}
+
+/* SECCION OFERTAS */
+
+.item-oferta,
+.item-precio {
+    font-size: 20px;
+}
+.item-before {
+    color: grey;
+    text-decoration: line-through;
+}
+.item-oferta {
+    color: #ff7d8f;
+    font-weight: 700;
+}
+
+/* POLITICAS */
+
+.policy-icon {
+    width: 60px;
+    height: 60px;
+}
+
+
+.policy-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
+    gap: 100px
+}
+
+
+.policy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px;
+}
+.policy a {
+    text-decoration: underline;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #3A3A3A;
+    color: #d6d6d6;
+}
+footer :hover {
+    color:#d6d6d6
+}
+
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 300px;
+}
+
+
+.footer-container ul {
+    list-style: none;
+    padding: 0px;
+}
+.footer-container a {
+    color: #d6d6d6;
+    text-decoration: none;
+}
+.footer-container a:hover {
+    color:#bc212d;
+    text-decoration: underline;
+}
+
+
+.footer-left {
+    margin-left: 100px;
+}
+.footer-right {
+    margin-right: 100px;
+}
+
+
+
+
